@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <form method="post" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" value="<%=listing.title%>" required>
+        <div class="valid-feedback">Title looks good!</div>
+    </div>
+       
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required ><%=listing.description%></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input name="listing[image]" placeholder="Enter image url" class="form-control" value="<%=listing.image%>"  required>
+    </div>
+    <div class="row">
+        <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input name="listing[price]" type="number" value="<%=listing.price%>" class="form-control" required>
+        <div class="invalid-feedback">Please enter a valid Price</div>
+    </div>
+
+
+    </div>
+        <button  class="btn btn-dark edit-btn mt-3">Edit your listing</button>
+        <!-- <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> -->
+    </form>
+</div>
+</div>
+</body>
